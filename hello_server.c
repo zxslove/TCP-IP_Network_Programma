@@ -23,7 +23,6 @@ int main(int argc, char const *argv[])
         exit(1);
     }
 
-    // 创建一个套接字
     serv_sock = socket(PF_INET, SOCK_STREAM, 0);
     if(serv_sock == -1)
         error_handling("sockt() error");

@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 	char *addr = "127.232.124.79";
 	struct sockaddr_in addr_inet;
 	
-	//把网络字节序整型IP地址转换为字符串形式
 	if(!inet_aton(addr, &addr_inet.sin_addr))
 		{
 			error_handling("Conversion error");

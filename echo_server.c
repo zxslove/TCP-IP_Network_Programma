@@ -1,4 +1,3 @@
-//回声服务器实例
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +10,7 @@ void error_handling(char *message);
 
 int main(int argc, char *argv[])
 {
-	int serv_sock, clnt_sock;  //服务器和客户端的套接字描述符
+	int serv_sock, clnt_sock;  
 	char message[BUF_SIZE];
 	int str_len, i;
 	
@@ -24,7 +23,6 @@ int main(int argc, char *argv[])
     exit(1);
 	}
 	
-	//创建服务端TCP套接字
 	serv_sock = socket(PF_INET, SOCK_STREAM, 0);
 	if(serv_sock == -1)
 		 error_handling("sockt() error");
@@ -34,11 +32,9 @@ int main(int argc, char *argv[])
 	serv_adr.sin_addr.s_addr = htonl(INADDR_ANY);
 	serv_adr.sin_port = htons(atoi(argv[1]));
 		 
-	//分配IP和端口号
 	if(bind(serv_sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr)) == -1)
 		  error_handling("bind() error");
-		
-	// 设置为可连接请求状态 
+		  
 	if(listen(serv_sock, 5) == -1)
 			error_handling("listen() error");
 		

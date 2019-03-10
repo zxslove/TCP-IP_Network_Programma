@@ -8,7 +8,6 @@ int main(int argc, char *argv[])
 	unsigned long  host_addr = Ox12345678;
 	unsigned long	 net_addr;
 	
-	//转化为网络字节序
 	net_port = htons(host_port);
 	net_addr = htonl(host_addr);
 	
